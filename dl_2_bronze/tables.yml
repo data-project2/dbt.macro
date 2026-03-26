@@ -1,0 +1,21 @@
+hash_checks:
+  - name: contractdeliverypoint_check
+    tables:
+      - table: DATALAKE.BLOB_CRM365_B2B.DATAVERSE_ENC_CONTRACTDELIVERYPOINT_HIST
+        columns: [id, modifiedon]
+      - table: DWH_B2B_CLONE_FERRY_MEDALLION.bronze.stg_ldm_commercialcontract_contracteddeliverypoint_crm
+        columns: [sor_id, modifiedon]
+
+  - name: contract_check
+    tables:
+      - table: DATALAKE.BLOB_CRM365_B2B.DATAVERSE_ENC_CONTRACT_HIST
+        columns: [id, modifiedon]
+      - table: DWH_B2B_CLONE_FERRY_MEDALLION.bronze.stg_ldm_commercialcontract_commercialcontract_crm
+        columns: [sor_id, modifiedon]
+
+  - name: invoice_crm_check
+    tables:
+      - table: DATALAKE.BLOB_CRM365_B2B.DATAVERSE_INVOICE_HIST
+        columns: [id, modifiedon]
+      - table: DWH_B2B_CLONE_FERRY_MEDALLION.bronze.stg_ldm_invoice_invoice_crm
+        columns: [sor_id, modifiedon]
